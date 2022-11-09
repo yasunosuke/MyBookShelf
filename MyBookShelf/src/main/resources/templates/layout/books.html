@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/books/books.css}">
 </head>
 <body>
-
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}" class=""> <img class="root-icon-left"
+						th:src="@{/images/books-icon.png}">
+				</a></li>
+				<li><a th:href="@{/insights}" class=""> <img class="root-icon-right"
+						th:src="@{/images/insights-icon.png}">
+				</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="main">
+		<div class="left">
+		    <div layout:replace="~{books/categories::categories}"></div>
+		</div>
+		<div class="right">
+			<div layout:replace="~{books/collection::collection}"></div>
+		</div>
+	</section>
 </body>
 </html>

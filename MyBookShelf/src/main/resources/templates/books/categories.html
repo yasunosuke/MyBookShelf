@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/books}">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>categories</title>
+<link rel="stylesheet" th:href="@{/css/books/categories.css}">
 </head>
 <body>
+	<div layout:fragment="categories">
+		<div class="content">
+		    <div class="category">
+					<form action="/" method="post">
+					    <input type="hidden" name="id" value="All">
+						<input class="category-button" type="submit" value="All"
+							name="selected-category">
+					</form>
+				</div>
+			<!-- <div class="search">
+				<div class="search-container">
+					<form th:action="@{/}" method="post"
+						th:object="${clotheSearchForm}">
+						<input class="search-input" type="search" th:field="*{clotheName}"
+							placeholder="Enter keyword"> <input class="search-button"
+							type="submit" value="search" name="search">
+					</form>
+				</div>
+			</div>
+			<div class="categories">
+				<div class="category">
+					<form action="/" method="post">
+					    <input type="hidden" name="id" value="All">
+						<input class="detail-button" type="submit" value="All"
+							name="selected-category">
+					</form>
+				</div>
+				<div class="category">
+					<form action="/" method="post">
+					    <input type="hidden" name="id" value="MyFavorites">
+						<input class="detail-button" type="submit" value="MyFavorites"
+							name="selected-category">
+					</form>
+				</div>
+				<div class="category" th:each="item:${categoryList}">
+					<form action="/" method="post">
+						<input type="hidden" name="id" th:value="${item.categoryId}">
+						<input type="hidden" name="searchWord"
+							th:value="${clotheSearchForm.clotheName}"> <input
+							class="detail-button" type="submit" value="detail"
+							name="selected-category">
+					</form>
+				</div>
 
+			</div> -->
+		</div>
+	</div>
 </body>
 </html>

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/books}">
 <head>
 <meta charset="UTF-8">
 <title>books collection</title>
 <link rel="stylesheet" th:href="@{/css/books/collection.css}">
 </head>
 <body>
-	<div class="content">
-		<div class="card-container">
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
+	<div layout:fragment="collection">
+		<div class="content">
+			<div class="card-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
 		</div>
 	</div>
 </body>
